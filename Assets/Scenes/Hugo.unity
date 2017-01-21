@@ -271,7 +271,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1627148366693650, guid: 3988a028d8dc24545b17253a9668c230, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114292123263324150, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: backgroundColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114507338896600560, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_MaxValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931762201013530, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_MaxValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114438937961507322, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_MaxValue
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3988a028d8dc24545b17253a9668c230, type: 2}
