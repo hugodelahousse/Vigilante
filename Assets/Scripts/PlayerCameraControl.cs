@@ -20,6 +20,9 @@ public class PlayerCameraControl : MonoBehaviour {
 
 	public KeyCode crouchButton = KeyCode.C;
 
+	public float vertRotateClampMin = -60.0f;
+	public float vertRotateClampMax =  60.0f;
+
 	public Sprite forward;
 	public Sprite backward;
 	public Sprite forwardCrouch;
@@ -33,6 +36,8 @@ public class PlayerCameraControl : MonoBehaviour {
 	private float cameraDist;
 
 	private Vector3 movementVec;
+	
+	private float vertRotate = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -46,7 +51,9 @@ public class PlayerCameraControl : MonoBehaviour {
 
 		player.transform.parent.Rotate(Vector3.up, horizontal);
 
-		cameraVertical.transform.Rotate(Vector3.right, vertical);
+		vertRotate += vertical;
+		vertRotate = Mathf.Clamp(vertRotate, vertRotateClampMin, vertRotateClampMax);
+		cameraVertical.transform.localRotation = Quaternion.AngleAxis(vertRotate, Vector3.right);
 
 		float vertAxis = Input.GetAxis("Vertical");
 		float horizAxis = Input.GetAxis("Horizontal");
@@ -139,7 +146,7 @@ public class PlayerCameraControl : MonoBehaviour {
 
 		RaycastHit info;
 		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
-		if (Physics.SphereCast(player.transform.parent.position, 0.5f, castDir, out info, cameraDist))
+		if (Physics.SphereCast(player.transform.parent.position, 0.5f, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 		{
 			transform.position = player.transform.parent.position + info.distance * castDir;
 		}
