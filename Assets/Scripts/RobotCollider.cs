@@ -20,12 +20,12 @@ public class RobotCollider : MonoBehaviour {
 			{
 				if (info.collider.gameObject == player)
 				{
-					Debug.Log("Robot saw player!");
+					transform.parent.SendMessage("OnNoticePlayer");
 				}
 			}
 			else
 			{
-				Debug.Log("Robot saw player!");
+				transform.parent.SendMessage("OnNoticePlayer");
 			}
 		}
 	}

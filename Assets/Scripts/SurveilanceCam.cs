@@ -14,4 +14,10 @@ public class SurveilanceCam : MonoBehaviour {
         temp.y = minRotation + (Mathf.Sin(Time.time * rotationSpeed) + 1)/2 * maxRotation;
         transform.rotation = Quaternion.Euler(temp);
     }
+
+	void OnNoticePlayer()
+	{
+		// TODO
+		Debug.Log("Camera saw player!");
+	}
 }
