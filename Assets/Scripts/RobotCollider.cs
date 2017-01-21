@@ -10,13 +10,13 @@ public class RobotCollider : MonoBehaviour {
 
 	void Update()
 	{
-		if (playerInVision && LOSToPlayer())
+		if (playerInVision && LoSToPlayer())
 		{
 			transform.parent.SendMessage("OnNoticePlayer");
 		}
 	}
 
-	public bool LOSToPlayer()
+	public bool LoSToPlayer()
 	{
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		Vector3 target = player.transform.position + Vector3.up * (player.GetComponent<CharacterController>().height / 2);

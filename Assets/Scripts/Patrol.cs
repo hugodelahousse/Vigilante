@@ -40,7 +40,7 @@ public class Patrol : MonoBehaviour {
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
 			agent.destination = player.transform.position;
 			agent.stoppingDistance = stoppingDistance;
-			if (GetComponentInChildren<RobotCollider>().LOSToPlayer())
+			if (GetComponentInChildren<RobotCollider>().LoSToPlayer())
 			{
 				timeSinceSeenPlayer = 0.0f;
 			}
