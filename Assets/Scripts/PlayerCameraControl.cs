@@ -116,7 +116,8 @@ public class PlayerCameraControl : MonoBehaviour {
 		}
 		else if(Input.GetKeyUp(crouchButton) || (!Input.GetKey(crouchButton) && isCrouching))
 		{
-			if (!Physics.Linecast(player.transform.parent.position, player.transform.parent.position + Vector3.up, Physics.AllLayers & ~LayerMask.NameToLayer("Minimap"), QueryTriggerInteraction.Ignore)){
+			if (!Physics.Linecast(player.transform.parent.position, player.transform.parent.position + Vector3.up, 
+				Physics.AllLayers & ~LayerMask.NameToLayer("Minimap"), QueryTriggerInteraction.Ignore)){
 				isCrouching = false;
 				player.transform.parent.GetComponent<CharacterController>().height = 2;
 				Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
