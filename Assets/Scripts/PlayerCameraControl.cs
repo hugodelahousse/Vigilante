@@ -46,8 +46,42 @@ public class PlayerCameraControl : MonoBehaviour {
 
 		cameraVertical.transform.Rotate(Vector3.right, vertical);
 
-		Vector3 forwardMotion = Input.GetAxis("Vertical") * player.transform.forward ;
-		Vector3 sideMotion = Input.GetAxis("Horizontal") * player.transform.right;
+		float vertAxis = Input.GetAxis("Vertical");
+		float horizAxis = Input.GetAxis("Horizontal");
+
+		if (vertAxis < 0.0f)
+		{
+			player.GetComponent<SpriteRenderer>().sprite = isCrouching ? backwardCrouch : backward;
+		}
+		else if (vertAxis > 0.0f)
+		{
+			player.GetComponent<SpriteRenderer>().sprite = isCrouching ? forwardCrouch : forward;
+		}
+		else
+		{
+			bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward) 
+						  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
+			player.GetComponent<SpriteRenderer>().sprite = 
+				isCrouching ? 
+				  (isForward ? forwardCrouch : backwardCrouch) 
+				: (isForward ? forward : backward);
+		}
+
+		{
+			bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward)
+							  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
+			if (horizAxis > 0.0f)
+			{
+				player.GetComponent<SpriteRenderer>().flipX = !isForward;
+			}
+			else if (horizAxis < 0.0f)
+			{
+				player.GetComponent<SpriteRenderer>().flipX = isForward;
+			}
+		}
+
+		Vector3 forwardMotion = vertAxis * player.transform.forward ;
+		Vector3 sideMotion = horizAxis * player.transform.right;
 
 		Vector3 desiredMove = forwardMotion + sideMotion;
 
@@ -70,14 +104,12 @@ public class PlayerCameraControl : MonoBehaviour {
 		{
 			isCrouching = true;
 			player.GetComponent<CapsuleCollider>().height = playerHeight / 2;
-			player.GetComponent<SpriteRenderer>().sprite = forwardCrouch;
 			registeredCrouchChanges = false;
 		}
 		else if(Input.GetKeyUp(crouchButton))
 		{
 			isCrouching = false;
 			player.GetComponent<CapsuleCollider>().height = playerHeight;
-			player.GetComponent<SpriteRenderer>().sprite = forward;
 			registeredCrouchChanges = false;
 		}
 	}
