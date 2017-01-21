@@ -28,12 +28,15 @@ public class PlayerCameraControl : MonoBehaviour {
 	public Sprite forwardCrouch;
 	public Sprite backwardCrouch;
 
+	public LayerMask cameraCheckMask;
+
 	private bool isGrounded = false;
 	private float yVelocity = 0.0f;
 
 	private bool isCrouching = false;
 
 	private float cameraDist;
+	private Vector3 cameraOffset;
 
 	private Vector3 movementVec;
 	
@@ -41,7 +44,8 @@ public class PlayerCameraControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cameraDist = (player.transform.parent.position - transform.position).magnitude;
+		cameraOffset = transform.localPosition;
+		cameraDist = cameraOffset.magnitude;
 	}
 	
 	// Update is called once per frame
@@ -112,13 +116,16 @@ public class PlayerCameraControl : MonoBehaviour {
 			center.y = -0.5f;
 			player.transform.parent.GetComponent<CharacterController>().center = center;
 		}
-		else if(Input.GetKeyUp(crouchButton))
+		else if(Input.GetKeyUp(crouchButton) || (!Input.GetKey(crouchButton) && isCrouching))
 		{
-			isCrouching = false;
-			player.transform.parent.GetComponent<CharacterController>().height = 2;
-			Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
-			center.y = 0.0f;
-			player.transform.parent.GetComponent<CharacterController>().center = center;
+			if (!Physics.Linecast(player.transform.parent.position, player.transform.parent.position + Vector3.up, 
+				Physics.AllLayers & ~LayerMask.NameToLayer("Minimap"), QueryTriggerInteraction.Ignore)){
+				isCrouching = false;
+				player.transform.parent.GetComponent<CharacterController>().height = 2;
+				Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
+				center.y = 0.0f;
+				player.transform.parent.GetComponent<CharacterController>().center = center;
+			}
 		}
 	}
 
@@ -146,9 +153,17 @@ public class PlayerCameraControl : MonoBehaviour {
 
 		RaycastHit info;
 		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
-		if (Physics.SphereCast(player.transform.parent.position, 0.5f, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+		if (Physics.SphereCast(player.transform.parent.position, 0.1f, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
 		{
-			transform.position = player.transform.parent.position + info.distance * castDir;
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.2f) * castDir;
+		}
+		else if (Physics.Raycast(player.transform.parent.position, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
+		{
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.1f) * castDir;
+		}
+		else
+		{
+			transform.localPosition = cameraOffset;
 		}
 
 		if (newY == oldY)

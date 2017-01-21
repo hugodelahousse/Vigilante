@@ -12,6 +12,8 @@ public class LockedDoor : MonoBehaviour
 	public float doorCloseDelay = 2.0f;
 	public float doorOpenTime = 1.0f;
 
+	public GameObject doorLock;
+
 	private bool isOpening = false;
 	private bool isOpen = false;
 	private bool isClosing = false;
@@ -29,6 +31,11 @@ public class LockedDoor : MonoBehaviour
 		{
 			Debug.Log("Closing door");
 			StartCoroutine("CloseDoor");
+		}
+
+		if (!isLocked && doorLock.activeInHierarchy)
+		{
+			doorLock.SetActive(false);
 		}
 	}
 
