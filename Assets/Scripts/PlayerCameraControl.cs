@@ -29,7 +29,6 @@ public class PlayerCameraControl : MonoBehaviour {
 	private float yVelocity = 0.0f;
 
 	private bool isCrouching = false;
-	private bool registeredCrouchChanges = true;
 
 	private Vector3 movementVec;
 
@@ -95,22 +94,21 @@ public class PlayerCameraControl : MonoBehaviour {
 		movementVec.x = desiredMove.x;
 		movementVec.z = desiredMove.z;
 
-		float oldY = player.transform.parent.position.y;
-		player.transform.parent.GetComponent<CharacterController>().height = (isCrouching ? playerHeight / 2 : playerHeight);
-		float newY = player.transform.parent.position.y;
-		transform.Translate(Vector3.up * (oldY - newY));
-
 		if (Input.GetKeyDown(crouchButton))
 		{
 			isCrouching = true;
-			player.GetComponent<CapsuleCollider>().height = playerHeight / 2;
-			registeredCrouchChanges = false;
+			player.transform.parent.GetComponent<CharacterController>().height = 1;
+			Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
+			center.y = -0.5f;
+			player.transform.parent.GetComponent<CharacterController>().center = center;
 		}
 		else if(Input.GetKeyUp(crouchButton))
 		{
 			isCrouching = false;
-			player.GetComponent<CapsuleCollider>().height = playerHeight;
-			registeredCrouchChanges = false;
+			player.transform.parent.GetComponent<CharacterController>().height = 2;
+			Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
+			center.y = 0.0f;
+			player.transform.parent.GetComponent<CharacterController>().center = center;
 		}
 	}
 
@@ -135,22 +133,6 @@ public class PlayerCameraControl : MonoBehaviour {
 		float oldY = player.transform.parent.position.y;
 		player.transform.parent.GetComponent<CharacterController>().Move(movementVec * Time.fixedDeltaTime);
 		float newY = player.transform.parent.position.y;
-
-		if (!registeredCrouchChanges)
-		{
-			if (isCrouching)
-			{
-				player.transform.Translate(Vector3.up * -playerHeight / 4);
-				player.transform.parent.GetComponent<CharacterController>().center = Vector3.up * -playerHeight / 4;
-			}
-			else
-			{
-				player.transform.Translate(Vector3.up * playerHeight / 4);
-				player.transform.parent.GetComponent<CharacterController>().center = Vector3.zero;
-			}
-
-			registeredCrouchChanges = true;
-		}
 
 		if (newY == oldY)
 		{
