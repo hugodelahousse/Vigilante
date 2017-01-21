@@ -15,6 +15,9 @@ public class HackingMinigame : MonoBehaviour
     public Color graphColor;
     public Color playerColor;
     public float period;
+    public int maxValue = 5;
+    public GameObject audio;
+    public int amplitude = 16;
 
 
     Texture2D texture;
@@ -27,7 +30,7 @@ public class HackingMinigame : MonoBehaviour
 
         for (int i = 0; i < matchAmplitudes.Length; ++i)
         {
-            matchAmplitudes[i] = 16 * Random.Range(0, 5);
+            matchAmplitudes[i] = amplitude * Random.Range(0, maxValue);
         }
 
         texture = new Texture2D(500, 250, TextureFormat.ARGB32, false);
@@ -42,8 +45,12 @@ public class HackingMinigame : MonoBehaviour
     {
         for (int i = 0; i < playerAmplitudes.Length; ++i)
         {
-            playerAmplitudes[i] = 16 * (int)playerSliders[i].value;
+            playerAmplitudes[i] = amplitude * (int)playerSliders[i].value;
         }
+        audio.GetComponent<AudioSource>().pitch = (1 + ((matchAmplitudes[0] - playerAmplitudes[0]) / amplitude)  * 0.1f);
+        audio.GetComponent<AudioDistortionFilter>().distortionLevel = Mathf.Abs((matchAmplitudes[1] - playerAmplitudes[1]) / amplitude) * 0.2f;
+        audio.GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000 - Mathf.Abs((matchAmplitudes[2] - playerAmplitudes[2]) / amplitude) * 5000;
+
         for (int x = 0; x < texture.width; ++x)
             for (int y = 0; y < texture.height; ++y)
                 texture.SetPixel(x, y, backgroundColor);
@@ -59,32 +66,32 @@ public class HackingMinigame : MonoBehaviour
             }
             DrawNote((int)x, (int)y, graphColor);
             DrawNote((int)x, (int)yPlayer, playerColor);
+
         }
         texture.Apply();
-        return;
-        for (float x = 0; x < texture.width; ++x)
-        {
-            float y = texture.height / 2;
-            float yPlayer = texture.height / 2;
-            for (int i = 0; i < matchAmplitudes.Length; ++i)
-            {
-                y += Mathf.Sin(x / (period * (i + 1))) * matchAmplitudes[i];
-                yPlayer += Mathf.Sin(x / (period * (i + 1))) * playerAmplitudes[i];
-            }
-            if (x > 0)
-            {
-                DrawLine((int)lastPoint.x, (int)lastPoint.y, (int)x, (int)y, graphColor);
-                DrawLine((int)playerLastPoint.x, (int)playerLastPoint.y, (int)x, (int)yPlayer, playerColor);
-            }
-            else
-            {
-                texture.SetPixel((int)x, (int)y, graphColor);
-                texture.SetPixel((int)x, (int)yPlayer, playerColor);
-            }
-            lastPoint = new Vector2(x, y);
-            playerLastPoint = new Vector2(x, yPlayer);
-        }
-        texture.Apply();
+        //for (float x = 0; x < texture.width; ++x)
+        //{
+        //    float y = texture.height / 2;
+        //    float yPlayer = texture.height / 2;
+        //    for (int i = 0; i < matchAmplitudes.Length; ++i)
+        //    {
+        //        y += Mathf.Sin(x / (period * (i + 1))) * matchAmplitudes[i];
+        //        yPlayer += Mathf.Sin(x / (period * (i + 1))) * playerAmplitudes[i];
+        //    }
+        //    if (x > 0)
+        //    {
+        //        DrawLine((int)lastPoint.x, (int)lastPoint.y, (int)x, (int)y, graphColor);
+        //        DrawLine((int)playerLastPoint.x, (int)playerLastPoint.y, (int)x, (int)yPlayer, playerColor);
+        //    }
+        //    else
+        //    {
+        //        texture.SetPixel((int)x, (int)y, graphColor);
+        //        texture.SetPixel((int)x, (int)yPlayer, playerColor);
+        //    }
+        //    lastPoint = new Vector2(x, y);
+        //    playerLastPoint = new Vector2(x, yPlayer);
+        //}
+        //texture.Apply();
     }
 
     void DrawNote(int x, int y, Color color)
