@@ -28,6 +28,9 @@ public class PlayerCameraControl : MonoBehaviour {
 	private bool isGrounded = false;
 	private float yVelocity = 0.0f;
 
+	private bool isCrouching = false;
+	private bool registeredCrouchChanges = true;
+
 	private Vector3 movementVec;
 
 	// Use this for initialization
@@ -38,8 +41,6 @@ public class PlayerCameraControl : MonoBehaviour {
 	void Update () {
 		float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
 		float vertical = Input.GetAxis("Mouse Y") * verticalRotateSpeed * Time.deltaTime * -1.0f;
-
-		bool isCrouching = Input.GetKey(crouchButton);
 
 		player.transform.parent.Rotate(Vector3.up, horizontal);
 
@@ -65,15 +66,19 @@ public class PlayerCameraControl : MonoBehaviour {
 		float newY = player.transform.parent.position.y;
 		transform.Translate(Vector3.up * (oldY - newY));
 
-		if (isCrouching)
+		if (Input.GetKeyDown(crouchButton))
 		{
+			isCrouching = true;
 			player.GetComponent<CapsuleCollider>().height = playerHeight / 2;
 			player.GetComponent<SpriteRenderer>().sprite = forwardCrouch;
+			registeredCrouchChanges = false;
 		}
-		else
+		else if(Input.GetKeyUp(crouchButton))
 		{
+			isCrouching = false;
 			player.GetComponent<CapsuleCollider>().height = playerHeight;
 			player.GetComponent<SpriteRenderer>().sprite = forward;
+			registeredCrouchChanges = false;
 		}
 	}
 
@@ -98,6 +103,22 @@ public class PlayerCameraControl : MonoBehaviour {
 		float oldY = player.transform.parent.position.y;
 		player.transform.parent.GetComponent<CharacterController>().Move(movementVec * Time.fixedDeltaTime);
 		float newY = player.transform.parent.position.y;
+
+		if (!registeredCrouchChanges)
+		{
+			if (isCrouching)
+			{
+				player.transform.Translate(Vector3.up * -playerHeight / 4);
+				player.transform.parent.GetComponent<CharacterController>().center = Vector3.up * -playerHeight / 4;
+			}
+			else
+			{
+				player.transform.Translate(Vector3.up * playerHeight / 4);
+				player.transform.parent.GetComponent<CharacterController>().center = Vector3.zero;
+			}
+
+			registeredCrouchChanges = true;
+		}
 
 		if (newY == oldY)
 		{
