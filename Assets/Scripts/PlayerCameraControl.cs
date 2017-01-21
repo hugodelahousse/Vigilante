@@ -28,6 +28,8 @@ public class PlayerCameraControl : MonoBehaviour {
 	public Sprite forwardCrouch;
 	public Sprite backwardCrouch;
 
+	public LayerMask cameraCheckMask;
+
 	private bool isGrounded = false;
 	private float yVelocity = 0.0f;
 
@@ -116,7 +118,8 @@ public class PlayerCameraControl : MonoBehaviour {
 		}
 		else if(Input.GetKeyUp(crouchButton) || (!Input.GetKey(crouchButton) && isCrouching))
 		{
-			if (!Physics.Linecast(player.transform.parent.position, player.transform.parent.position + Vector3.up)){
+			if (!Physics.Linecast(player.transform.parent.position, player.transform.parent.position + Vector3.up, 
+				Physics.AllLayers & ~LayerMask.NameToLayer("Minimap"), QueryTriggerInteraction.Ignore)){
 				isCrouching = false;
 				player.transform.parent.GetComponent<CharacterController>().height = 2;
 				Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
@@ -150,13 +153,13 @@ public class PlayerCameraControl : MonoBehaviour {
 
 		RaycastHit info;
 		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
-		if (Physics.SphereCast(player.transform.parent.position, 0.3f, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+		if (Physics.SphereCast(player.transform.parent.position, 0.1f, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
 		{
-			transform.position = player.transform.parent.position + Mathf.Max(0.0f, info.distance - 0.2f) * castDir;
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.2f) * castDir;
 		}
-		else if (Physics.Raycast(player.transform.parent.position, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+		else if (Physics.Raycast(player.transform.parent.position, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
 		{
-			transform.position = player.transform.parent.position + Mathf.Max(0.0f, info.distance - 0.1f) * castDir;
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.1f) * castDir;
 		}
 		else
 		{
