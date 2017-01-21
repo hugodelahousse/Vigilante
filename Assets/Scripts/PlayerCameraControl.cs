@@ -146,7 +146,7 @@ public class PlayerCameraControl : MonoBehaviour {
 
 		RaycastHit info;
 		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
-		if (Physics.SphereCast(player.transform.parent.position, 0.5f, castDir, out info, cameraDist))
+		if (Physics.SphereCast(player.transform.parent.position, 0.5f, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 		{
 			transform.position = player.transform.parent.position + info.distance * castDir;
 		}
