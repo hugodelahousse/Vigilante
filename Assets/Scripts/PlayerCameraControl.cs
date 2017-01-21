@@ -28,10 +28,15 @@ public class PlayerCameraControl : MonoBehaviour {
 	private bool isGrounded = false;
 	private float yVelocity = 0.0f;
 
+	private bool isCrouching = false;
+
+	private float cameraDist;
+
 	private Vector3 movementVec;
 
 	// Use this for initialization
 	void Start () {
+		cameraDist = (player.transform.parent.position - transform.position).magnitude;
 	}
 	
 	// Update is called once per frame
@@ -39,14 +44,46 @@ public class PlayerCameraControl : MonoBehaviour {
 		float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
 		float vertical = Input.GetAxis("Mouse Y") * verticalRotateSpeed * Time.deltaTime * -1.0f;
 
-		bool isCrouching = Input.GetKey(crouchButton);
-
 		player.transform.parent.Rotate(Vector3.up, horizontal);
 
 		cameraVertical.transform.Rotate(Vector3.right, vertical);
 
-		Vector3 forwardMotion = Input.GetAxis("Vertical") * player.transform.forward ;
-		Vector3 sideMotion = Input.GetAxis("Horizontal") * player.transform.right;
+		float vertAxis = Input.GetAxis("Vertical");
+		float horizAxis = Input.GetAxis("Horizontal");
+
+		if (vertAxis < 0.0f)
+		{
+			player.GetComponent<SpriteRenderer>().sprite = isCrouching ? backwardCrouch : backward;
+		}
+		else if (vertAxis > 0.0f)
+		{
+			player.GetComponent<SpriteRenderer>().sprite = isCrouching ? forwardCrouch : forward;
+		}
+		else
+		{
+			bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward) 
+						  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
+			player.GetComponent<SpriteRenderer>().sprite = 
+				isCrouching ? 
+				  (isForward ? forwardCrouch : backwardCrouch) 
+				: (isForward ? forward : backward);
+		}
+
+		{
+			bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward)
+							  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
+			if (horizAxis > 0.0f)
+			{
+				player.GetComponent<SpriteRenderer>().flipX = !isForward;
+			}
+			else if (horizAxis < 0.0f)
+			{
+				player.GetComponent<SpriteRenderer>().flipX = isForward;
+			}
+		}
+
+		Vector3 forwardMotion = vertAxis * player.transform.forward ;
+		Vector3 sideMotion = horizAxis * player.transform.right;
 
 		Vector3 desiredMove = forwardMotion + sideMotion;
 
@@ -60,20 +97,21 @@ public class PlayerCameraControl : MonoBehaviour {
 		movementVec.x = desiredMove.x;
 		movementVec.z = desiredMove.z;
 
-		float oldY = player.transform.parent.position.y;
-		player.transform.parent.GetComponent<CharacterController>().height = (isCrouching ? playerHeight / 2 : playerHeight);
-		float newY = player.transform.parent.position.y;
-		transform.Translate(Vector3.up * (oldY - newY));
-
-		if (isCrouching)
+		if (Input.GetKeyDown(crouchButton))
 		{
-			player.GetComponent<CapsuleCollider>().height = playerHeight / 2;
-			player.GetComponent<SpriteRenderer>().sprite = forwardCrouch;
+			isCrouching = true;
+			player.transform.parent.GetComponent<CharacterController>().height = 1;
+			Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
+			center.y = -0.5f;
+			player.transform.parent.GetComponent<CharacterController>().center = center;
 		}
-		else
+		else if(Input.GetKeyUp(crouchButton))
 		{
-			player.GetComponent<CapsuleCollider>().height = playerHeight;
-			player.GetComponent<SpriteRenderer>().sprite = forward;
+			isCrouching = false;
+			player.transform.parent.GetComponent<CharacterController>().height = 2;
+			Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
+			center.y = 0.0f;
+			player.transform.parent.GetComponent<CharacterController>().center = center;
 		}
 	}
 
@@ -98,6 +136,13 @@ public class PlayerCameraControl : MonoBehaviour {
 		float oldY = player.transform.parent.position.y;
 		player.transform.parent.GetComponent<CharacterController>().Move(movementVec * Time.fixedDeltaTime);
 		float newY = player.transform.parent.position.y;
+
+		RaycastHit info;
+		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
+		if (Physics.SphereCast(player.transform.parent.position, 0.5f, castDir, out info, cameraDist))
+		{
+			transform.position = player.transform.parent.position + info.distance * castDir;
+		}
 
 		if (newY == oldY)
 		{
