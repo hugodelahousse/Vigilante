@@ -28,6 +28,8 @@ public class PlayerCameraControl : MonoBehaviour {
 	public Sprite forwardCrouch;
 	public Sprite backwardCrouch;
 
+	public LayerMask cameraCheckMask;
+
 	private bool isGrounded = false;
 	private float yVelocity = 0.0f;
 
@@ -151,11 +153,11 @@ public class PlayerCameraControl : MonoBehaviour {
 
 		RaycastHit info;
 		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
-		if (Physics.SphereCast(player.transform.parent.position, 0.1f, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+		if (Physics.SphereCast(player.transform.parent.position, 0.1f, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
 		{
 			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.2f) * castDir;
 		}
-		else if (Physics.Raycast(player.transform.parent.position, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+		else if (Physics.Raycast(player.transform.parent.position, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
 		{
 			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.1f) * castDir;
 		}
