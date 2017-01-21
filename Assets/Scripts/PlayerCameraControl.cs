@@ -42,89 +42,117 @@ public class PlayerCameraControl : MonoBehaviour {
 	
 	private float vertRotate = 0.0f;
 
+	private bool isGamePaused = false;
+	private float originalTimeScale;
+
+	private GameObject menuObject;
+
 	// Use this for initialization
 	void Start () {
 		cameraOffset = transform.localPosition;
 		cameraDist = cameraOffset.magnitude;
+		originalTimeScale = Time.timeScale;
+		menuObject = FindObjectOfType<MenuActions>().gameObject;
+		menuObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
-		float vertical = Input.GetAxis("Mouse Y") * verticalRotateSpeed * Time.deltaTime * -1.0f;
-
-		player.transform.parent.Rotate(Vector3.up, horizontal);
-
-		vertRotate += vertical;
-		vertRotate = Mathf.Clamp(vertRotate, vertRotateClampMin, vertRotateClampMax);
-		cameraVertical.transform.localRotation = Quaternion.AngleAxis(vertRotate, Vector3.right);
-
-		float vertAxis = Input.GetAxis("Vertical");
-		float horizAxis = Input.GetAxis("Horizontal");
-
-		if (vertAxis < 0.0f)
+		if (isGamePaused)
 		{
-			player.GetComponent<SpriteRenderer>().sprite = isCrouching ? backwardCrouch : backward;
-		}
-		else if (vertAxis > 0.0f)
-		{
-			player.GetComponent<SpriteRenderer>().sprite = isCrouching ? forwardCrouch : forward;
+			if (Input.GetKeyUp(KeyCode.Escape))
+			{
+				isGamePaused = false;
+				menuObject.SetActive(false);
+				Time.timeScale = originalTimeScale;
+			}
 		}
 		else
 		{
-			bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward) 
-						  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
-			player.GetComponent<SpriteRenderer>().sprite = 
-				isCrouching ? 
-				  (isForward ? forwardCrouch : backwardCrouch) 
-				: (isForward ? forward : backward);
-		}
+			if (Input.GetKeyUp(KeyCode.Escape))
+			{
+				isGamePaused = true;
+				menuObject.SetActive(true);
+				Time.timeScale = 0;
+			}
 
-		{
-			bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward)
+			float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
+			float vertical = Input.GetAxis("Mouse Y") * verticalRotateSpeed * Time.deltaTime * -1.0f;
+
+			player.transform.parent.Rotate(Vector3.up, horizontal);
+
+			vertRotate += vertical;
+			vertRotate = Mathf.Clamp(vertRotate, vertRotateClampMin, vertRotateClampMax);
+			cameraVertical.transform.localRotation = Quaternion.AngleAxis(vertRotate, Vector3.right);
+
+			float vertAxis = Input.GetAxis("Vertical");
+			float horizAxis = Input.GetAxis("Horizontal");
+
+			if (vertAxis < 0.0f)
+			{
+				player.GetComponent<SpriteRenderer>().sprite = isCrouching ? backwardCrouch : backward;
+			}
+			else if (vertAxis > 0.0f)
+			{
+				player.GetComponent<SpriteRenderer>().sprite = isCrouching ? forwardCrouch : forward;
+			}
+			else
+			{
+				bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward)
 							  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
-			if (horizAxis > 0.0f)
-			{
-				player.GetComponent<SpriteRenderer>().flipX = !isForward;
+				player.GetComponent<SpriteRenderer>().sprite =
+					isCrouching ?
+					  (isForward ? forwardCrouch : backwardCrouch)
+					: (isForward ? forward : backward);
 			}
-			else if (horizAxis < 0.0f)
+
 			{
-				player.GetComponent<SpriteRenderer>().flipX = isForward;
+				bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward)
+								  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
+				if (horizAxis > 0.0f)
+				{
+					player.GetComponent<SpriteRenderer>().flipX = !isForward;
+				}
+				else if (horizAxis < 0.0f)
+				{
+					player.GetComponent<SpriteRenderer>().flipX = isForward;
+				}
 			}
-		}
 
-		Vector3 forwardMotion = vertAxis * player.transform.forward ;
-		Vector3 sideMotion = horizAxis * player.transform.right;
+			Vector3 forwardMotion = vertAxis * player.transform.forward;
+			Vector3 sideMotion = horizAxis * player.transform.right;
 
-		Vector3 desiredMove = forwardMotion + sideMotion;
+			Vector3 desiredMove = forwardMotion + sideMotion;
 
-		desiredMove = desiredMove.normalized * (isCrouching ? crouchSpeed : playerMoveSpeed);
+			desiredMove = desiredMove.normalized * (isCrouching ? crouchSpeed : playerMoveSpeed);
 
-		if (isGrounded && !isCrouching && Input.GetKeyDown(KeyCode.Space))
-		{
-			yVelocity = jumpVelocity;
-		}
+			if (isGrounded && !isCrouching && Input.GetKeyDown(KeyCode.Space))
+			{
+				yVelocity = jumpVelocity;
+			}
 
-		movementVec.x = desiredMove.x;
-		movementVec.z = desiredMove.z;
+			movementVec.x = desiredMove.x;
+			movementVec.z = desiredMove.z;
 
-		if (Input.GetKeyDown(crouchButton))
-		{
-			isCrouching = true;
-			player.transform.parent.GetComponent<CharacterController>().height = 1;
-			Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
-			center.y = -0.5f;
-			player.transform.parent.GetComponent<CharacterController>().center = center;
-		}
-		else if(Input.GetKeyUp(crouchButton) || (!Input.GetKey(crouchButton) && isCrouching))
-		{
-			if (!Physics.Linecast(player.transform.parent.position, player.transform.parent.position + Vector3.up, 
-				Physics.AllLayers & ~LayerMask.NameToLayer("Minimap"), QueryTriggerInteraction.Ignore)){
-				isCrouching = false;
-				player.transform.parent.GetComponent<CharacterController>().height = 2;
+			if (Input.GetKeyDown(crouchButton))
+			{
+				isCrouching = true;
+				player.transform.parent.GetComponent<CharacterController>().height = 1;
 				Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
-				center.y = 0.0f;
+				center.y = -0.5f;
 				player.transform.parent.GetComponent<CharacterController>().center = center;
+			}
+			else if (Input.GetKeyUp(crouchButton) || (!Input.GetKey(crouchButton) && isCrouching))
+			{
+				if (!Physics.Linecast(player.transform.parent.position, player.transform.parent.position + Vector3.up,
+					Physics.AllLayers & ~LayerMask.NameToLayer("Minimap"), QueryTriggerInteraction.Ignore))
+				{
+					isCrouching = false;
+					player.transform.parent.GetComponent<CharacterController>().height = 2;
+					Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
+					center.y = 0.0f;
+					player.transform.parent.GetComponent<CharacterController>().center = center;
+				}
 			}
 		}
 	}
