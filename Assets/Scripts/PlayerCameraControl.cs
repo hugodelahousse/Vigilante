@@ -30,10 +30,13 @@ public class PlayerCameraControl : MonoBehaviour {
 
 	private bool isCrouching = false;
 
+	private float cameraDist;
+
 	private Vector3 movementVec;
 
 	// Use this for initialization
 	void Start () {
+		cameraDist = (player.transform.parent.position - transform.position).magnitude;
 	}
 	
 	// Update is called once per frame
@@ -133,6 +136,13 @@ public class PlayerCameraControl : MonoBehaviour {
 		float oldY = player.transform.parent.position.y;
 		player.transform.parent.GetComponent<CharacterController>().Move(movementVec * Time.fixedDeltaTime);
 		float newY = player.transform.parent.position.y;
+
+		RaycastHit info;
+		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
+		if (Physics.SphereCast(player.transform.parent.position, 0.5f, castDir, out info, cameraDist))
+		{
+			transform.position = player.transform.parent.position + info.distance * castDir;
+		}
 
 		if (newY == oldY)
 		{
