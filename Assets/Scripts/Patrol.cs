@@ -31,4 +31,10 @@ public class Patrol : MonoBehaviour {
         if (agent.remainingDistance < 0.5f)
             GoToNext();
 	}
+
+	void OnNoticePlayer()
+	{
+		// TODO
+		Debug.Log("Robot saw player!");
+	}
 }
