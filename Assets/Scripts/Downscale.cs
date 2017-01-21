@@ -9,7 +9,7 @@ public class Downscale : MonoBehaviour {
     void Start()
     {
         int realRatio = Mathf.RoundToInt(Screen.width / Screen.height);
-        renderTexture.width = NearestSuperiorPowerOf2(Mathf.RoundToInt(renderTexture.width * realRatio));
+        //renderTexture.width = NearestSuperiorPowerOf2(Mathf.RoundToInt(renderTexture.width * realRatio));
         Debug.Log("(Pixelation)(Start)renderTexture.width: " + renderTexture.width);
     }
 

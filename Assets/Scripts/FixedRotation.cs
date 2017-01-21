@@ -8,11 +8,14 @@ public class FixedRotation : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        cam = GameObject.FindWithTag("MainCamera").transform;
+        
     }
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        transform.rotation.Set(transform.rotation.x, cam.rotation.y, transform.rotation.z, transform.rotation.w);
-	}
+
+
+        //transform.rotation = Quaternion.LookRotation(cam.position - transform.position);
+        transform.LookAt(Camera.main.transform);
+    }
 }
