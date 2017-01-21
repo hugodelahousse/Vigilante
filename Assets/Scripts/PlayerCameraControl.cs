@@ -10,34 +10,101 @@ public class PlayerCameraControl : MonoBehaviour {
 	public float horizontalRotateSpeed = 1.0f;
 	public float verticalRotateSpeed = 1.0f;
 
-	public float playerMoveSpeed = 1.0f;
+	public float playerMoveSpeed = 3.0f;
+	public float crouchSpeed = 2.0f;
 
-	private Vector3 followOffset;
+	public float playerRadius = 1.0f;
+	public float playerHeight = 2.0f;
 
-	private Vector3 lastMousePos;
+	public float jumpVelocity = 6.0f;
+
+	public KeyCode crouchButton = KeyCode.C;
+
+	public Sprite forward;
+	public Sprite backward;
+	public Sprite forwardCrouch;
+	public Sprite backwardCrouch;
+
+	private bool isGrounded = false;
+	private float yVelocity = 0.0f;
+
+	private Vector3 movementVec;
 
 	// Use this for initialization
 	void Start () {
-		followOffset = transform.localPosition;
-
-		lastMousePos = Input.mousePosition;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 mouseDelta = Input.mousePosition - lastMousePos;
-		lastMousePos = Input.mousePosition;
 		float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
 		float vertical = Input.GetAxis("Mouse Y") * verticalRotateSpeed * Time.deltaTime * -1.0f;
 
-		player.transform.Rotate(Vector3.up, horizontal);
+		bool isCrouching = Input.GetKey(crouchButton);
+
+		player.transform.parent.Rotate(Vector3.up, horizontal);
 
 		cameraVertical.transform.Rotate(Vector3.right, vertical);
 
-		Vector3 forwardMotion = Input.GetAxis("Vertical") * player.transform.forward * playerMoveSpeed * Time.deltaTime;
-		Vector3 sideMotion = Input.GetAxis("Horizontal") * player.transform.right * playerMoveSpeed * Time.deltaTime;
+		Vector3 forwardMotion = Input.GetAxis("Vertical") * player.transform.forward ;
+		Vector3 sideMotion = Input.GetAxis("Horizontal") * player.transform.right;
 
-		player.transform.position += (forwardMotion + sideMotion);
+		Vector3 desiredMove = forwardMotion + sideMotion;
 
+		desiredMove = desiredMove.normalized * (isCrouching ? crouchSpeed : playerMoveSpeed);
+
+		if (isGrounded && !isCrouching && Input.GetKeyDown(KeyCode.Space))
+		{
+			yVelocity = jumpVelocity;
+		}
+
+		movementVec.x = desiredMove.x;
+		movementVec.z = desiredMove.z;
+
+		float oldY = player.transform.parent.position.y;
+		player.transform.parent.GetComponent<CharacterController>().height = (isCrouching ? playerHeight / 2 : playerHeight);
+		float newY = player.transform.parent.position.y;
+		transform.Translate(Vector3.up * (oldY - newY));
+
+		if (isCrouching)
+		{
+			player.GetComponent<CapsuleCollider>().height = playerHeight / 2;
+			player.GetComponent<SpriteRenderer>().sprite = forwardCrouch;
+		}
+		else
+		{
+			player.GetComponent<CapsuleCollider>().height = playerHeight;
+			player.GetComponent<SpriteRenderer>().sprite = forward;
+		}
+
+		Debug.Log("isGrounded: " + isGrounded + " yVelocity: " + yVelocity);
+	}
+
+	void FixedUpdate()
+	{
+		isGrounded = player.transform.parent.GetComponent<CharacterController>().isGrounded;
+
+		if (isGrounded)
+		{
+			if (yVelocity <= 0.0f)
+			{
+				yVelocity = 0.0f;
+			}
+		}
+		else
+		{
+			yVelocity += Physics.gravity.y * Time.fixedDeltaTime;
+		}
+
+		movementVec.y = yVelocity;
+
+		float oldY = player.transform.parent.position.y;
+		player.transform.parent.GetComponent<CharacterController>().Move(movementVec * Time.fixedDeltaTime);
+		float newY = player.transform.parent.position.y;
+
+		if (newY == oldY)
+		{
+			isGrounded = true;
+			yVelocity = 0.0f;
+		}
 	}
 }
