@@ -54,7 +54,6 @@ public class PlayerCameraControl : MonoBehaviour {
 		vertRotate += vertical;
 		vertRotate = Mathf.Clamp(vertRotate, vertRotateClampMin, vertRotateClampMax);
 		cameraVertical.transform.localRotation = Quaternion.AngleAxis(vertRotate, Vector3.right);
-		//cameraVertical.transform.Rotate(Vector3.right, vertical);
 
 		float vertAxis = Input.GetAxis("Vertical");
 		float horizAxis = Input.GetAxis("Horizontal");
