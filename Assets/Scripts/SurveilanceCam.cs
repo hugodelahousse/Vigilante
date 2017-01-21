@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SurveilanceCam : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+    public float maxRotation;
+    public float minRotation;
+    public float rotationSpeed;
+
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        Vector3 temp = transform.rotation.eulerAngles;
+        temp.y = minRotation + (Mathf.Sin(Time.time * rotationSpeed) + 1)/2 * maxRotation;
+        transform.rotation = Quaternion.Euler(temp);
+    }
 }
