@@ -153,11 +153,11 @@ public class PlayerCameraControl : MonoBehaviour {
 		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
 		if (Physics.SphereCast(player.transform.parent.position, 0.1f, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 		{
-			transform.position = player.transform.parent.position + Mathf.Max(0.0f, info.distance - 0.2f) * castDir;
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.2f) * castDir;
 		}
 		else if (Physics.Raycast(player.transform.parent.position, castDir, out info, cameraDist, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 		{
-			transform.position = player.transform.parent.position + Mathf.Max(0.0f, info.distance - 0.1f) * castDir;
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.1f) * castDir;
 		}
 		else
 		{
