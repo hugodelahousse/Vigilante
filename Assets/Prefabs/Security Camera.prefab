@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 135449629498834946}
   - component: {fileID: 23631809839121652}
   - component: {fileID: 114247390183690226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Security Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,14 +55,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261538355776556}
-  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -27.25, y: 8.89, z: -31.11}
+  m_LocalRotation: {x: 0.27215254, y: -0.36570314, z: -0.11272933, w: 0.8828852}
+  m_LocalPosition: {x: -18.559036, y: 5.26, z: -14.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4810156530730596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.460001, y: -50.428, z: -25.721}
 --- !u!4 &4810156530730596
 Transform:
   m_ObjectHideFlags: 1
