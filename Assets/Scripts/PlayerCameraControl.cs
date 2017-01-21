@@ -75,8 +75,6 @@ public class PlayerCameraControl : MonoBehaviour {
 			player.GetComponent<CapsuleCollider>().height = playerHeight;
 			player.GetComponent<SpriteRenderer>().sprite = forward;
 		}
-
-		Debug.Log("isGrounded: " + isGrounded + " yVelocity: " + yVelocity);
 	}
 
 	void FixedUpdate()
