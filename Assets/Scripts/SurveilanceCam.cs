@@ -19,5 +19,25 @@ public class SurveilanceCam : MonoBehaviour {
 	{
 		// TODO
 		Debug.Log("Camera saw player!");
+
+		Patrol[] patrols = FindObjectsOfType<Patrol>();
+
+		Patrol closestPatrol = null;
+		float closestDistSqr = Mathf.Infinity;
+
+		foreach (Patrol patrol in patrols)
+		{
+			float distSqr = (patrol.transform.position - transform.position).sqrMagnitude;
+			if (distSqr < closestDistSqr)
+			{
+				closestDistSqr = distSqr;
+				closestPatrol = patrol;
+			}
+		}
+
+		if (closestPatrol)
+		{
+			closestPatrol.SendMessage("OnCameraAlert");
+		}
 	}
 }
