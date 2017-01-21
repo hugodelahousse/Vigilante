@@ -10,24 +10,31 @@ public class RobotCollider : MonoBehaviour {
 
 	void Update()
 	{
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		if (playerInVision)
+		if (playerInVision && LOSToPlayer())
 		{
-			Vector3 target = player.transform.position + Vector3.up * (player.GetComponent<CharacterController>().height / 2);
+			transform.parent.SendMessage("OnNoticePlayer");
+		}
+	}
 
-			RaycastHit info;
-			if (Physics.Linecast(transform.position, target, out info, checkSightMask, QueryTriggerInteraction.Ignore))
+	public bool LOSToPlayer()
+	{
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		Vector3 target = player.transform.position + Vector3.up * (player.GetComponent<CharacterController>().height / 2);
+
+		RaycastHit info;
+		if (Physics.Linecast(transform.position, target, out info, checkSightMask, QueryTriggerInteraction.Ignore))
+		{
+			if (info.collider.gameObject == player)
 			{
-				if (info.collider.gameObject == player)
-				{
-					transform.parent.SendMessage("OnNoticePlayer");
-				}
-			}
-			else
-			{
-				transform.parent.SendMessage("OnNoticePlayer");
+				return true;
 			}
 		}
+		else
+		{
+			return true;
+		}
+
+		return false;
 	}
 
 	void OnTriggerEnter(Collider col)
