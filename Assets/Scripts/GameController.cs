@@ -90,7 +90,6 @@ public class GameController : MonoBehaviour {
 				if (action.CompareTag("GameOverMenu"))
 				{
 					gameOverMenuObject = action.gameObject;
-					gameOverMenuObject.SetActive(false);
 				}
 				else
 				{
