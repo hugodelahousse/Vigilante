@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour {
 	// Use this for initialization
 
 	private static GameController Instance;
+
 
     private bool hacking_ = false;
     public bool hacking
@@ -169,6 +172,7 @@ public class GameController : MonoBehaviour {
 
 	public void ValidateHacking(HackingMinigame minigame)
     {
+        Debug.Log("Solved");
         for (int i = 0; i < minigame.matchAmplitudes.Length; ++i)
             if (minigame.matchAmplitudes[i] != minigame.playerAmplitudes[i])
                 return;
@@ -179,7 +183,12 @@ public class GameController : MonoBehaviour {
                 hackingTarget.GetComponent<SurveilanceCam>().enabled = false;
                 hackingTarget.GetComponentInChildren<SphereCollider>().enabled = false;
                 break;
+            case "Last Computer":
+                Debug.Log("Solved");
+                SceneManager.LoadScene("Victory");
+                break;
             default:
+                Debug.Log(hackingTarget.tag);
                 break;
         }
         //hackingTarget.SetActive(false);
