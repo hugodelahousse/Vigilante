@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour {
             case "Camera":
                 hackingTarget.GetComponent<SurveilanceCam>().coneVision.SetActive(false);
                 hackingTarget.GetComponent<SurveilanceCam>().enabled = false;
-
+                hackingTarget.GetComponentInChildren<SphereCollider>().enabled = false;
                 break;
             default:
                 break;

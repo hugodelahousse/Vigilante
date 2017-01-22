@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 135377102505248798}
   - component: {fileID: 23671157416389658}
   m_Layer: 11
-  m_Name: Camera
+  m_Name: Camera Hack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,8 +100,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261538355776556}
-  m_LocalRotation: {x: 0.059864894, y: 0.37797198, z: 0.14452665, w: 0.9125051}
-  m_LocalPosition: {x: 3.69, y: 6.33, z: -27.36}
+  m_LocalRotation: {x: 0.15514912, y: 0.9795727, z: 0.0200127, w: 0.1263552}
+  m_LocalPosition: {x: 8.64, y: 6.33, z: 5.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4163452312248312}
@@ -116,13 +116,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1256601650362206}
-  m_LocalRotation: {x: 0.08651321, y: -0.70299953, z: 0.08681571, w: 0.70054996}
-  m_LocalPosition: {x: -0.16, y: 0.87, z: -0.17}
-  m_LocalScale: {x: 4.664007, y: 5.0253325, z: 2.7013485}
+  m_LocalRotation: {x: 0.23038137, y: -0.691136, z: 0.17423317, w: 0.66249406}
+  m_LocalPosition: {x: 0.56, y: 1.02, z: 0.42}
+  m_LocalScale: {x: 5, y: 5, z: 3}
   m_Children: []
   m_Father: {fileID: 4349539279698368}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 14.080001, y: -90.2, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.099003, y: -94.20901, z: -6.0020003}
 --- !u!4 &4835762517100076
 Transform:
   m_ObjectHideFlags: 1
