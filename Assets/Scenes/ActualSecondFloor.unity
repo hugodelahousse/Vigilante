@@ -294,6 +294,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40bc25e0724084a4a932eb1f63d0ec62, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &93162237 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1484160333920910, guid: 3988a028d8dc24545b17253a9668c230,
+    type: 2}
+  m_PrefabInternal: {fileID: 1549600014}
+--- !u!114 &93162239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 93162237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf79aec42ac89a44488ae6fe9126a9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &113335959
 Prefab:
   m_ObjectHideFlags: 0
@@ -5666,33 +5682,40 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1087981946213674, guid: 3988a028d8dc24545b17253a9668c230, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114810774249803306, guid: 3988a028d8dc24545b17253a9668c230,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 135071364}
-    - target: {fileID: 114810774249803306, guid: 3988a028d8dc24545b17253a9668c230,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ValidateHacking
-      objectReference: {fileID: 0}
     - target: {fileID: 114829638477981274, guid: 3988a028d8dc24545b17253a9668c230,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 135071364}
-    - target: {fileID: 114829638477981274, guid: 3988a028d8dc24545b17253a9668c230,
+    - target: {fileID: 114810774249803306, guid: 3988a028d8dc24545b17253a9668c230,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StopHacking
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1627148366693650, guid: 3988a028d8dc24545b17253a9668c230, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 224416444026218002, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_AnchorMax.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224950387138979506, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224025910413166628, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810774249803306, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810774249803306, guid: 3988a028d8dc24545b17253a9668c230,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3988a028d8dc24545b17253a9668c230, type: 2}
@@ -7235,17 +7258,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1627148366693650, guid: 3988a028d8dc24545b17253a9668c230,
     type: 2}
   m_PrefabInternal: {fileID: 1549600014}
---- !u!114 &1887240239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1887240238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb2480b251ceed4f9a68a97b2af10e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1910878088
 GameObject:
   m_ObjectHideFlags: 0
