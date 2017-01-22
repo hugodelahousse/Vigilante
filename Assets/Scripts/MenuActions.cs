@@ -22,4 +22,9 @@ public class MenuActions : MonoBehaviour {
 	{
 		Application.Quit();
 	}
+
+	public void LoadMenu()
+	{
+		Application.LoadLevel(0);
+	}
 }
