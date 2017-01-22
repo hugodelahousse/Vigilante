@@ -14,6 +14,8 @@ public class ElevatorMenu : MonoBehaviour {
 	void Start()
 	{
 		floorNumber.enabled = false;
+        FindObjectOfType<GameController>().elevatorMenu = gameObject;
+        gameObject.SetActive(false);
 	}
 
 	public void OnFloor2MouseEnter()

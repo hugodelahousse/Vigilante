@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour {
     public GameObject hackingPanel;
 
 	private HashSet<string> keysInInventory = new HashSet<string>();
-	private GameObject elevatorMenu;
+	public GameObject elevatorMenu;
 
 	private GameObject gameOverMenuObject;
 	private GameObject pauseMenuObject;
@@ -82,7 +82,8 @@ public class GameController : MonoBehaviour {
 		originalTimeScale = Time.timeScale;
 		_isGameOver = false;
 
-		if (Application.loadedLevel != 0)
+       
+        if (Application.loadedLevel != 0)
 		{
 			foreach (MenuActions action in FindObjectsOfType<MenuActions>())
 			{
@@ -99,12 +100,8 @@ public class GameController : MonoBehaviour {
 			}
 		}
 
-		elevatorMenu = GameObject.FindGameObjectWithTag("ElevatorMenu");
-
-		if (elevatorMenu)
-		{
-			elevatorMenu.SetActive(false);
-		}
+		
+       
 	}
 
 	void OnLevelWasLoaded () {
@@ -159,6 +156,10 @@ public class GameController : MonoBehaviour {
 			elevatorMenu.SetActive(true);
 			_inElevatorMenu = true;
 		}
+        else
+        {
+            Debug.LogError("Elevator fnot foudn ");
+        }
 	}
 
 	public void CloseElevatorMenu()
