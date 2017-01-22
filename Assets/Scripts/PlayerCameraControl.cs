@@ -43,42 +43,37 @@ public class PlayerCameraControl : MonoBehaviour {
 	
 	private float vertRotate = 0.0f;
 
-	private bool isGamePaused = false;
-	private float originalTimeScale;
+	GameController gameController;
 
-	private GameObject menuObject;
+    public Animator anim;
 
 	// Use this for initialization
 	void Start () {
 		cameraOffset = transform.localPosition;
 		cameraDist = cameraOffset.magnitude;
-		originalTimeScale = Time.timeScale;
-		menuObject = FindObjectOfType<MenuActions>().gameObject;
-		menuObject.SetActive(false);
+		gameController = FindObjectOfType<GameController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (isGamePaused)
+		if (gameController.isGamePaused)
 		{
 			if (Input.GetKeyUp(KeyCode.Escape))
 			{
-				isGamePaused = false;
-				menuObject.SetActive(false);
-				Time.timeScale = originalTimeScale;
+				gameController.ExitMenu();
 			}
 		}
 		else
 		{
 			if (Input.GetKeyUp(KeyCode.Escape))
 			{
-				isGamePaused = true;
-				menuObject.SetActive(true);
-				Time.timeScale = 0;
+				gameController.EnterMenu();
 			}
 
 			float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
 			float vertical = Input.GetAxis("Mouse Y") * verticalRotateSpeed * Time.deltaTime * -1.0f;
+
+               
 
 			player.transform.parent.Rotate(Vector3.up, horizontal);
 
@@ -89,22 +84,17 @@ public class PlayerCameraControl : MonoBehaviour {
 			float vertAxis = Input.GetAxis("Vertical");
 			float horizAxis = Input.GetAxis("Horizontal");
 
-			if (vertAxis < 0.0f)
+            anim.SetBool("Walking", Mathf.Abs(vertAxis) > 0.2 || Mathf.Abs(horizAxis) > 0.2);
+
+            if (vertAxis < 0.0f)
 			{
 				player.GetComponent<SpriteRenderer>().sprite = isCrouching ? backwardCrouch : backward;
+				anim.SetBool("Facing", true);
 			}
 			else if (vertAxis > 0.0f)
 			{
 				player.GetComponent<SpriteRenderer>().sprite = isCrouching ? forwardCrouch : forward;
-			}
-			else
-			{
-				bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward)
-							  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
-				player.GetComponent<SpriteRenderer>().sprite =
-					isCrouching ?
-					  (isForward ? forwardCrouch : backwardCrouch)
-					: (isForward ? forward : backward);
+				anim.SetBool("Facing", false);
 			}
 
 			{
@@ -117,8 +107,10 @@ public class PlayerCameraControl : MonoBehaviour {
 				else if (horizAxis < 0.0f)
 				{
 					player.GetComponent<SpriteRenderer>().flipX = isForward;
+                    //anim.SetBool("Facing", !isForward);
 				}
-			}
+                
+            }
 
 			Vector3 forwardMotion = vertAxis * player.transform.forward;
 			Vector3 sideMotion = horizAxis * player.transform.right;
@@ -142,6 +134,7 @@ public class PlayerCameraControl : MonoBehaviour {
 				Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
 				center.y = -0.5f;
 				player.transform.parent.GetComponent<CharacterController>().center = center;
+
 			}
 			else if (Input.GetKeyUp(crouchButton) || (!Input.GetKey(crouchButton) && isCrouching))
 			{
@@ -156,6 +149,8 @@ public class PlayerCameraControl : MonoBehaviour {
 				}
 			}
 		}
+        anim.SetBool("Crouching", isCrouching);
+         
 	}
 
 	void FixedUpdate()

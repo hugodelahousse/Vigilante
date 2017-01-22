@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4388886875081238}
   - component: {fileID: 212482218286263748}
+  - component: {fileID: 95805001388185102}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -143,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1515367773793408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.23, z: -3.8}
+  m_LocalPosition: {x: 0, y: 1.026, z: -2.387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4403377374104284}
@@ -183,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986548714635672}
   m_LocalRotation: {x: 0.11042822, y: 0, z: 0, w: 0.99388415}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.625, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4371857199108180}
@@ -448,6 +449,23 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1515367773793408}
   m_Enabled: 1
+--- !u!95 &95805001388185102
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870208459879768}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62e100cd1dc8cfb4693bd774e51b8411, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114009696557544200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,6 +545,7 @@ MonoBehaviour:
   cameraCheckMask:
     serializedVersion: 2
     m_Bits: 4294965979
+  anim: {fileID: 95805001388185102}
 --- !u!124 &124299370052319832
 Behaviour:
   m_ObjectHideFlags: 1

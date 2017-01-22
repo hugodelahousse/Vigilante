@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Camera
+  - GameOverMenu
+  - MiniMapUI
   layers:
   - Default
   - TransparentFX
