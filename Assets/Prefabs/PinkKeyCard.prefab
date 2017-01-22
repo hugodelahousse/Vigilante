@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d402920c08b50f4bb34ed3e441290c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: DOOR_TEST
+  ID: PINK_CARD
   sprites:
   - {fileID: 21300024, guid: e25e97dd0e9d78d44b8304273acfb54f, type: 3}
   - {fileID: 21300026, guid: e25e97dd0e9d78d44b8304273acfb54f, type: 3}
