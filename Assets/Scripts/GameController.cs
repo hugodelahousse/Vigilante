@@ -56,7 +56,7 @@ public class GameController : MonoBehaviour {
 	private HashSet<string> keysInInventory = new HashSet<string>();
 	public GameObject elevatorMenu;
 
-	private GameObject gameOverMenuObject;
+	public GameObject gameOverMenuObject;
 	private GameObject pauseMenuObject;
 	private float originalTimeScale;
 

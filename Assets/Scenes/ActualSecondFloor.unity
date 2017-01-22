@@ -533,6 +533,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hackingTarget: {fileID: 0}
   hackingPanel: {fileID: 1887240238}
+  elevatorMenu: {fileID: 0}
+  gameOverMenuObject: {fileID: 0}
 --- !u!4 &135071365
 Transform:
   m_ObjectHideFlags: 0
@@ -5688,6 +5690,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StopHacking
       objectReference: {fileID: 0}
+    - target: {fileID: 1627148366693650, guid: 3988a028d8dc24545b17253a9668c230, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3988a028d8dc24545b17253a9668c230, type: 2}
   m_IsPrefabParent: 0
@@ -7229,6 +7235,17 @@ GameObject:
   m_PrefabParentObject: {fileID: 1627148366693650, guid: 3988a028d8dc24545b17253a9668c230,
     type: 2}
   m_PrefabInternal: {fileID: 1549600014}
+--- !u!114 &1887240239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1887240238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb2480b251ceed4f9a68a97b2af10e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910878088
 GameObject:
   m_ObjectHideFlags: 0
