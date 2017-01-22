@@ -7,6 +7,7 @@ public class SurveilanceCam : MonoBehaviour {
     public float maxRotation;
     public float minRotation;
     public float rotationSpeed;
+    public GameObject coneVision;
 
 	// Update is called once per frame
 	void Update () {
