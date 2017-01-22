@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class KeyCardItem : MonoBehaviour {
-
-	public string ID = "PLEASE_PUT_ID_HERE";
+public class MainMenu : MonoBehaviour {
 
 	public Sprite[] sprites;
 	public float frameTime = 0.2f;
@@ -12,8 +11,8 @@ public class KeyCardItem : MonoBehaviour {
 	private int currentIndex = 0;
 	private float currTime = 0.0f;
 
-	void Update()
-	{
+	// Update is called once per frame
+	void Update () {
 		if (sprites != null && sprites.Length > 0)
 		{
 			currTime += Time.deltaTime;
@@ -22,18 +21,8 @@ public class KeyCardItem : MonoBehaviour {
 			{
 				currTime -= frameTime;
 				currentIndex = (currentIndex + 1) % sprites.Length;
-				GetComponent<SpriteRenderer>().sprite = sprites[currentIndex];
+				GetComponent<RawImage>().texture = sprites[currentIndex].texture;
 			}
-		}
-	}
-
-	void OnTriggerEnter(Collider col)
-	{
-		if (col.CompareTag("Player"))
-		{
-			// Got key!
-			FindObjectOfType<GameController>().AddKey(ID);
-			Destroy(gameObject);
 		}
 	}
 }
