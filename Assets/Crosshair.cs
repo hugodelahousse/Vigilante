@@ -6,12 +6,14 @@ public class Crosshair : MonoBehaviour {
     public float hackRange = 16;
     GameController gameController;
     public GameObject popup;
-    // Use this for initialization
+	public GameObject elevatorPopup;
+
+	// Use this for initialization
 
 	void Start () {
         gameController = FindObjectOfType<GameController>();
-
-    }
+		elevatorPopup.SetActive(false);
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,6 +25,16 @@ public class Crosshair : MonoBehaviour {
             if(Input.GetButton("Interact"))
                 gameController.Hack(hit.collider.transform.parent.gameObject);
         }
+
+		{
+			Physics.Linecast(Camera.main.transform.position, Camera.main.transform.position + 6 * (transform.position - Camera.main.transform.position).normalized, out hit, 1 << 12);
+			elevatorPopup.SetActive(hit.collider);
+			if (hit.collider)
+			{
+				if (Input.GetButton("Interact"))
+					gameController.OpenElevatorMenu();
+			}
+		}
 
     }
 }

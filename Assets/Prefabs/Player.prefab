@@ -198,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1966731675853838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.7, y: 2.06, z: 18.5}
+  m_LocalPosition: {x: -11.16, y: 2.06, z: 18.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4825656902650090}
@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hackRange: 16
   popup: {fileID: 0}
+  elevatorPopup: {fileID: 0}
 --- !u!114 &114110950240166206
 MonoBehaviour:
   m_ObjectHideFlags: 1
