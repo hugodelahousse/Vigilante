@@ -56,7 +56,7 @@ public class Patrol : MonoBehaviour {
 				chasingPlayer = false;
 			}
 
-			if (agent.remainingDistance < 1.0f)
+			if ((player.transform.position - transform.position).magnitude < 1.2f)
 			{
 				FindObjectOfType<GameController>().GameOver();
 			}

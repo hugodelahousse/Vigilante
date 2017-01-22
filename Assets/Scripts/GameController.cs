@@ -74,7 +74,8 @@ public class GameController : MonoBehaviour {
 		gameOverMenuObject.SetActive(true);
 	}
 
-	void OnLevelWasLoaded () {
+	void Setup()
+	{
 		originalTimeScale = Time.timeScale;
 
 		foreach (MenuActions action in FindObjectsOfType<MenuActions>())
@@ -98,7 +99,16 @@ public class GameController : MonoBehaviour {
 			elevatorMenu.SetActive(false);
 		}
 	}
+
+	void OnLevelWasLoaded () {
+		Setup();
+	}
 	
+	void Start()
+	{
+		Setup();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
