@@ -70,7 +70,7 @@ public class Patrol : MonoBehaviour {
 	void OnNoticePlayer()
 	{
 		// TODO
-		Debug.Log("Robot saw player!");
+		//Debug.Log("Robot saw player!");
 		chasingPlayer = true;
 	}
 }

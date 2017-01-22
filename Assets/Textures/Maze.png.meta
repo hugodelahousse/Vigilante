@@ -1,0 +1,384 @@
+fileFormatVersion: 2
+guid: e47503afb4fc2d94c9008b803940246f
+timeCreated: 1485079712
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Maze_0
+    21300002: Maze_1
+    21300004: Maze_2
+    21300006: Maze_3
+    21300008: Maze_4
+    21300010: Maze_5
+    21300012: Maze_6
+    21300014: Maze_7
+    21300016: Maze_8
+    21300018: Maze_9
+    21300020: Maze_10
+    21300022: Maze_11
+    21300024: Maze_12
+    21300026: Maze_13
+    21300028: Maze_14
+    21300030: Maze_15
+    21300032: Maze_16
+    21300034: Maze_17
+    21300036: Maze_18
+    21300038: Maze_19
+    21300040: Maze_20
+    21300042: Maze_21
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Maze_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 588
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 588
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 588
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 588
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_4
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 588
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_5
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 588
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_7
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 392
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_8
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 392
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_9
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 392
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_10
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 392
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_11
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 392
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 196
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_14
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 196
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_15
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 196
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_16
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 196
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_17
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 196
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_19
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_20
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Maze_21
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 0
+        width: 314.33334
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

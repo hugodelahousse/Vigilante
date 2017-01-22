@@ -319,13 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183cb85c503cf34499b95bd1198e982e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  path: []
   chaseTimeout: 10
   stoppingDistance: 1
 --- !u!135 &135241182672804218

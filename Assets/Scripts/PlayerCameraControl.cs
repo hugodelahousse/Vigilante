@@ -27,6 +27,7 @@ public class PlayerCameraControl : MonoBehaviour {
 	public Sprite backward;
 	public Sprite forwardCrouch;
 	public Sprite backwardCrouch;
+    public Vector3 overShoulder;
 
 	public LayerMask cameraCheckMask;
 
@@ -183,15 +184,15 @@ public class PlayerCameraControl : MonoBehaviour {
 		Vector3 castDir = (transform.position - player.transform.parent.position).normalized;
 		if (Physics.SphereCast(player.transform.parent.position, 0.1f, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
 		{
-			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.2f) * castDir;
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.2f) * castDir + overShoulder;
 		}
 		else if (Physics.Raycast(player.transform.parent.position, castDir, out info, cameraDist, cameraCheckMask, QueryTriggerInteraction.Ignore))
 		{
-			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.1f) * castDir;
+			transform.position = player.transform.parent.position + Mathf.Max(0.1f, info.distance - 0.1f) * castDir + overShoulder;
 		}
 		else
 		{
-			transform.localPosition = cameraOffset;
+			transform.localPosition = cameraOffset + overShoulder;
 		}
 
 		if (newY == oldY)

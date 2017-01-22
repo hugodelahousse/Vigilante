@@ -41,7 +41,7 @@ public class RobotCollider : MonoBehaviour {
 	{
 		if (col.CompareTag("Player"))
 		{
-			Debug.Log("Vision enter");
+			//Debug.Log("Vision enter");
 			playerInVision = true;
 		}
 	}
@@ -50,7 +50,7 @@ public class RobotCollider : MonoBehaviour {
 	{
 		if (col.CompareTag("Player"))
 		{
-			Debug.Log("Vision exit");
+			//Debug.Log("Vision exit");
 			playerInVision = false;
 		}
 	}
