@@ -34,16 +34,24 @@ public class GameController : MonoBehaviour {
 
 	private bool _inPauseMenu = false;
 	private bool _isGameOver = false;
+	private bool _inElevatorMenu = false;
 
 	public bool isGamePaused
 	{
 		get { return _inPauseMenu || _isGameOver; }
 	}
 
-    public GameObject hackingTarget;
+	public bool inElevatorMenu
+	{
+		get { return _inElevatorMenu; }
+	}
+
+
+	public GameObject hackingTarget;
     public GameObject hackingPanel;
 
 	private HashSet<string> keysInInventory = new HashSet<string>();
+	private GameObject elevatorMenu;
 
 	private GameObject gameOverMenuObject;
 	private GameObject pauseMenuObject;
@@ -66,7 +74,7 @@ public class GameController : MonoBehaviour {
 		gameOverMenuObject.SetActive(true);
 	}
 
-	void Start () {
+	void OnLevelWasLoaded () {
 		originalTimeScale = Time.timeScale;
 
 		foreach (MenuActions action in FindObjectsOfType<MenuActions>())
@@ -81,6 +89,13 @@ public class GameController : MonoBehaviour {
 				pauseMenuObject = action.gameObject;
 				pauseMenuObject.SetActive(false);
 			}
+		}
+
+		elevatorMenu = GameObject.FindGameObjectWithTag("ElevatorMenu");
+
+		if (elevatorMenu)
+		{
+			elevatorMenu.SetActive(false);
 		}
 	}
 	
@@ -105,9 +120,12 @@ public class GameController : MonoBehaviour {
 
 	public void EnterMenu()
 	{
-		_inPauseMenu = true;
-		pauseMenuObject.SetActive(true);
-		Time.timeScale = 0;
+		if (!_inElevatorMenu)
+		{
+			_inPauseMenu = true;
+			pauseMenuObject.SetActive(true);
+			Time.timeScale = 0;
+		}
 	}
 
 	public void ExitMenu()
@@ -117,7 +135,25 @@ public class GameController : MonoBehaviour {
 		Time.timeScale = originalTimeScale;
 	}
 
-    public void ValidateHacking(HackingMinigame minigame)
+	public void OpenElevatorMenu()
+	{
+		if (elevatorMenu)
+		{
+			elevatorMenu.SetActive(true);
+			_inElevatorMenu = true;
+		}
+	}
+
+	public void CloseElevatorMenu()
+	{
+		if (elevatorMenu)
+		{
+			elevatorMenu.SetActive(false);
+			_inElevatorMenu = false;
+		}
+	}
+
+	public void ValidateHacking(HackingMinigame minigame)
     {
         for (int i = 0; i < minigame.matchAmplitudes.Length; ++i)
             if (minigame.matchAmplitudes[i] != minigame.playerAmplitudes[i])
