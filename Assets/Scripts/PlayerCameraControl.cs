@@ -89,20 +89,12 @@ public class PlayerCameraControl : MonoBehaviour {
             if (vertAxis < 0.0f)
 			{
 				player.GetComponent<SpriteRenderer>().sprite = isCrouching ? backwardCrouch : backward;
+				anim.SetBool("Facing", true);
 			}
 			else if (vertAxis > 0.0f)
 			{
 				player.GetComponent<SpriteRenderer>().sprite = isCrouching ? forwardCrouch : forward;
-			}
-			else
-			{
-				bool isForward = (player.GetComponent<SpriteRenderer>().sprite == forward)
-							  || (player.GetComponent<SpriteRenderer>().sprite == forwardCrouch);
-				player.GetComponent<SpriteRenderer>().sprite =
-					isCrouching ?
-					  (isForward ? forwardCrouch : backwardCrouch)
-					: (isForward ? forward : backward);
-
+				anim.SetBool("Facing", false);
 			}
 
 			{
