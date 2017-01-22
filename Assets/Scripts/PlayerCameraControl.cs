@@ -43,10 +43,7 @@ public class PlayerCameraControl : MonoBehaviour {
 	
 	private float vertRotate = 0.0f;
 
-	private bool isGamePaused = false;
-	private float originalTimeScale;
-
-	private GameObject menuObject;
+	GameController gameController;
 
     public Animator anim;
 
@@ -54,29 +51,23 @@ public class PlayerCameraControl : MonoBehaviour {
 	void Start () {
 		cameraOffset = transform.localPosition;
 		cameraDist = cameraOffset.magnitude;
-		originalTimeScale = Time.timeScale;
-		menuObject = FindObjectOfType<MenuActions>().gameObject;
-		menuObject.SetActive(false);
+		gameController = FindObjectOfType<GameController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (isGamePaused)
+		if (gameController.isGamePaused)
 		{
 			if (Input.GetKeyUp(KeyCode.Escape))
 			{
-				isGamePaused = false;
-				menuObject.SetActive(false);
-				Time.timeScale = originalTimeScale;
+				gameController.ExitMenu();
 			}
 		}
 		else
 		{
 			if (Input.GetKeyUp(KeyCode.Escape))
 			{
-				isGamePaused = true;
-				menuObject.SetActive(true);
-				Time.timeScale = 0;
+				gameController.EnterMenu();
 			}
 
 			float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
@@ -151,6 +142,7 @@ public class PlayerCameraControl : MonoBehaviour {
 				Vector3 center = player.transform.parent.GetComponent<CharacterController>().center;
 				center.y = -0.5f;
 				player.transform.parent.GetComponent<CharacterController>().center = center;
+
 			}
 			else if (Input.GetKeyUp(crouchButton) || (!Input.GetKey(crouchButton) && isCrouching))
 			{
