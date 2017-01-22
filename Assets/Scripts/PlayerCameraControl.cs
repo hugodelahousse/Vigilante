@@ -45,6 +45,8 @@ public class PlayerCameraControl : MonoBehaviour {
 
 	GameController gameController;
 
+    public Animator anim;
+
 	// Use this for initialization
 	void Start () {
 		cameraOffset = transform.localPosition;
@@ -71,6 +73,8 @@ public class PlayerCameraControl : MonoBehaviour {
 			float horizontal = Input.GetAxis("Mouse X") * horizontalRotateSpeed * Time.deltaTime;
 			float vertical = Input.GetAxis("Mouse Y") * verticalRotateSpeed * Time.deltaTime * -1.0f;
 
+               
+
 			player.transform.parent.Rotate(Vector3.up, horizontal);
 
 			vertRotate += vertical;
@@ -80,7 +84,9 @@ public class PlayerCameraControl : MonoBehaviour {
 			float vertAxis = Input.GetAxis("Vertical");
 			float horizAxis = Input.GetAxis("Horizontal");
 
-			if (vertAxis < 0.0f)
+            anim.SetBool("Walking", Mathf.Abs(vertAxis) > 0.2 || Mathf.Abs(horizAxis) > 0.2);
+
+            if (vertAxis < 0.0f)
 			{
 				player.GetComponent<SpriteRenderer>().sprite = isCrouching ? backwardCrouch : backward;
 			}
@@ -96,6 +102,7 @@ public class PlayerCameraControl : MonoBehaviour {
 					isCrouching ?
 					  (isForward ? forwardCrouch : backwardCrouch)
 					: (isForward ? forward : backward);
+
 			}
 
 			{
@@ -108,8 +115,10 @@ public class PlayerCameraControl : MonoBehaviour {
 				else if (horizAxis < 0.0f)
 				{
 					player.GetComponent<SpriteRenderer>().flipX = isForward;
+                    //anim.SetBool("Facing", !isForward);
 				}
-			}
+                
+            }
 
 			Vector3 forwardMotion = vertAxis * player.transform.forward;
 			Vector3 sideMotion = horizAxis * player.transform.right;
@@ -148,6 +157,8 @@ public class PlayerCameraControl : MonoBehaviour {
 				}
 			}
 		}
+        anim.SetBool("Crouching", isCrouching);
+         
 	}
 
 	void FixedUpdate()
