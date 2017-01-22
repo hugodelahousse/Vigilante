@@ -1,0 +1,608 @@
+fileFormatVersion: 2
+guid: 154b48c8ee956a54d8e1da93b118bc3f
+timeCreated: 1485055115
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PipeSaver_0
+    21300002: PipeSaver_1
+    21300004: PipeSaver_2
+    21300006: PipeSaver_3
+    21300008: PipeSaver_4
+    21300010: PipeSaver_5
+    21300012: PipeSaver_6
+    21300014: PipeSaver_7
+    21300016: PipeSaver_8
+    21300018: PipeSaver_9
+    21300020: PipeSaver_10
+    21300022: PipeSaver_11
+    21300024: PipeSaver_12
+    21300026: PipeSaver_13
+    21300028: PipeSaver_14
+    21300030: PipeSaver_15
+    21300032: PipeSaver_16
+    21300034: PipeSaver_17
+    21300036: PipeSaver_18
+    21300038: PipeSaver_19
+    21300040: PipeSaver_20
+    21300042: PipeSaver_21
+    21300044: PipeSaver_22
+    21300046: PipeSaver_23
+    21300048: PipeSaver_24
+    21300050: PipeSaver_25
+    21300052: PipeSaver_26
+    21300054: PipeSaver_27
+    21300056: PipeSaver_28
+    21300058: PipeSaver_29
+    21300060: PipeSaver_30
+    21300062: PipeSaver_31
+    21300064: PipeSaver_32
+    21300066: PipeSaver_33
+    21300068: PipeSaver_34
+    21300070: PipeSaver_35
+    21300072: PipeSaver_36
+    21300074: PipeSaver_37
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PipeSaver_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_3
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_4
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_6
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_7
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 648
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_11
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_13
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_14
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_15
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 486
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_18
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_19
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_20
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_21
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_22
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_23
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 324
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_26
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_27
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_28
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_29
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_30
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_31
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 162
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_33
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_34
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_35
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_36
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PipeSaver_37
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 240
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
