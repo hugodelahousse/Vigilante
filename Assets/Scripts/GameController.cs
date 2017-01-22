@@ -77,6 +77,7 @@ public class GameController : MonoBehaviour {
 	void Setup()
 	{
 		originalTimeScale = Time.timeScale;
+		_isGameOver = false;
 
 		foreach (MenuActions action in FindObjectsOfType<MenuActions>())
 		{
