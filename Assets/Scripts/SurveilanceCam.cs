@@ -7,6 +7,7 @@ public class SurveilanceCam : MonoBehaviour {
     public float maxRotation;
     public float minRotation;
     public float rotationSpeed;
+    public GameObject coneVision;
 
 	// Update is called once per frame
 	void Update () {
@@ -19,5 +20,25 @@ public class SurveilanceCam : MonoBehaviour {
 	{
 		// TODO
 		Debug.Log("Camera saw player!");
+
+		Patrol[] patrols = FindObjectsOfType<Patrol>();
+
+		Patrol closestPatrol = null;
+		float closestDistSqr = Mathf.Infinity;
+
+		foreach (Patrol patrol in patrols)
+		{
+			float distSqr = (patrol.transform.position - transform.position).sqrMagnitude;
+			if (distSqr < closestDistSqr)
+			{
+				closestDistSqr = distSqr;
+				closestPatrol = patrol;
+			}
+		}
+
+		if (closestPatrol)
+		{
+			closestPatrol.SendMessage("OnCameraAlert");
+		}
 	}
 }
