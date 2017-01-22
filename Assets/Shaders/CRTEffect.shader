@@ -3,9 +3,10 @@
 		_MainTex("Base (RGB)", 2D) = "white" {}
 		_MaskTex("Mask texture", 2D) = "white" {}
 		_NoiseTex("Noise texture", 2D) = "white" {}
-		_maskBlend("Mask blending", Float) = 0.5
-		_maskExp("Mask exponent", Float) = 0.2
+		_maskBlend("CRT Flicker Amount", Float) = 0.5
+		_maskExp("CRT Distortion Amount", Float) = 0.2
 		_noiseSampleScale("Noise Sample Scale", Float) = 80
+		_noiseSpeed("Noise Speed", Float) = 4
 	}
 		SubShader{
 		Pass{
@@ -21,13 +22,14 @@
 		fixed _maskBlend;
 		fixed _maskExp;
 		fixed _noiseSampleScale;
+		fixed _noiseSpeed;
 
 		fixed4 frag(v2f_img i) : COLOR{
 			fixed2 uvs = (i.uv * 2) - fixed2(1, 1);
 
 			fixed len = length(uvs);
 
-			fixed4 noise = tex2D(_NoiseTex, i.uv * _noiseSampleScale + fixed2(_Time.z, 0));
+			fixed4 noise = tex2D(_NoiseTex, i.uv * _noiseSampleScale + fixed2(_Time.z * _noiseSpeed, 0));
 
 			uvs = uvs * pow(len, _maskExp);
 			uvs = (uvs + fixed2(1, 1)) / 2;
