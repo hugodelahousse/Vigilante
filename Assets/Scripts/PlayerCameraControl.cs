@@ -117,7 +117,7 @@ public class PlayerCameraControl : MonoBehaviour {
 
 			desiredMove = desiredMove.normalized * (isCrouching ? crouchSpeed : playerMoveSpeed);
 
-			if (isGrounded && !isCrouching && Input.GetKeyDown(KeyCode.Space))
+			if (false && isGrounded && !isCrouching && Input.GetKeyDown(KeyCode.Space))
 			{
 				yVelocity = jumpVelocity;
 			}

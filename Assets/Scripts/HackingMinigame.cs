@@ -46,9 +46,9 @@ public class HackingMinigame : MonoBehaviour
         {
             playerAmplitudes[i] = amplitude * (int)playerSliders[i].value;
         }
-        audio.GetComponent<AudioSource>().pitch = (1 + ((matchAmplitudes[0] - playerAmplitudes[0]) / amplitude)  * 0.1f);
-        audio.GetComponent<AudioDistortionFilter>().distortionLevel = Mathf.Abs((matchAmplitudes[1] - playerAmplitudes[1]) / amplitude) * 0.2f;
-        audio.GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000 - Mathf.Abs((matchAmplitudes[2] - playerAmplitudes[2]) / amplitude) * 5000;
+        //audio.GetComponent<AudioSource>().pitch = (1 + ((matchAmplitudes[0] - playerAmplitudes[0]) / amplitude)  * 0.1f);
+        //audio.GetComponent<AudioDistortionFilter>().distortionLevel = Mathf.Abs((matchAmplitudes[1] - playerAmplitudes[1]) / amplitude) * 0.2f;
+        //audio.GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000 - Mathf.Abs((matchAmplitudes[2] - playerAmplitudes[2]) / amplitude) * 5000;
 
         for (int x = 0; x < texture.width; ++x)
             for (int y = 0; y < texture.height; ++y)
