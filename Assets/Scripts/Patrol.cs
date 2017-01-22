@@ -37,6 +37,7 @@ public class Patrol : MonoBehaviour {
 	{
 		if (chasingPlayer)
 		{
+            transform.LookAt(agent.destination);
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
 			agent.destination = player.transform.position;
 			agent.stoppingDistance = stoppingDistance;
