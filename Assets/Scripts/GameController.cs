@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-    // Use this for initialization
+	// Use this for initialization
+
+	private static GameController Instance;
 
     private bool hacking_ = false;
     public bool hacking
@@ -15,6 +17,20 @@ public class GameController : MonoBehaviour {
             hacking_ = value;
         }
     }
+
+	void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+
+		if (Instance != this)
+		{
+			Destroy(gameObject);
+		}
+	}
 
 	private bool _inPauseMenu = false;
 	private bool _isGameOver = false;
