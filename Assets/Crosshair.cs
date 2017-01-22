@@ -36,5 +36,10 @@ public class Crosshair : MonoBehaviour {
 			}
 		}
 
+		if (gameController.inElevatorMenu && Input.GetKeyUp(KeyCode.Escape))
+		{
+			gameController.CloseElevatorMenu();
+		}
+
     }
 }

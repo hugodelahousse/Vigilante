@@ -8,6 +8,8 @@ public class ElevatorMenu : MonoBehaviour {
 	public Image floorNumber;
 
 	public Sprite floor2Sprite;
+	public Sprite needsKey;
+	public string floor2KeyName = "YELLOW_CARD";
 
 	void Start()
 	{
@@ -17,7 +19,15 @@ public class ElevatorMenu : MonoBehaviour {
 	public void OnFloor2MouseEnter()
 	{
 		floorNumber.enabled = true;
-		floorNumber.sprite = floor2Sprite;
+
+		if (FindObjectOfType<GameController>().HasKey(floor2KeyName))
+		{
+			floorNumber.sprite = floor2Sprite;
+		}
+		else
+		{
+			floorNumber.sprite = needsKey;
+		}
 	}
 
 	public void OnFloor2MouseExit()
@@ -27,7 +37,10 @@ public class ElevatorMenu : MonoBehaviour {
 
 	public void GoToFloor2()
 	{
-		Application.LoadLevel("ActualSecondFloor");
-		FindObjectOfType<GameController>().CloseElevatorMenu();
+		if (FindObjectOfType<GameController>().HasKey(floor2KeyName))
+		{
+			Application.LoadLevel("ActualSecondFloor");
+			FindObjectOfType<GameController>().CloseElevatorMenu();
+		}
 	}
 }

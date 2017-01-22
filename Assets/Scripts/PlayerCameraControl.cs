@@ -18,8 +18,6 @@ public class PlayerCameraControl : MonoBehaviour {
 
 	public float jumpVelocity = 6.0f;
 
-	public KeyCode crouchButton = KeyCode.C;
-
 	public float vertRotateClampMin = -60.0f;
 	public float vertRotateClampMax =  60.0f;
 
@@ -126,6 +124,8 @@ public class PlayerCameraControl : MonoBehaviour {
 
 			movementVec.x = desiredMove.x;
 			movementVec.z = desiredMove.z;
+
+			const KeyCode crouchButton = KeyCode.LeftShift;
 
 			if (Input.GetKeyDown(crouchButton))
 			{
