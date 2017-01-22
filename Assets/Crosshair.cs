@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour {
     public float hackRange = 16;
-    GameController gameController;
+    public GameController gameController;
     public GameObject popup;
 	public GameObject elevatorPopup;
 
