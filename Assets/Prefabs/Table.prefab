@@ -53,7 +53,6 @@ GameObject:
   - component: {fileID: 4618346566984122}
   - component: {fileID: 33530037813691954}
   - component: {fileID: 23635366987143386}
-  - component: {fileID: 65024682089923960}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -67,9 +66,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514443721916288}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.031966604, y: 0.92, z: -1.0523257}
-  m_LocalScale: {x: 86.44936, y: 199.31168, z: 100}
+  m_LocalRotation: {x: -0.00000008940697, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.031966604, y: 0.9202867, z: 1.041}
+  m_LocalScale: {x: 86.44936, y: 199.31168, z: 195.2}
   m_Children: []
   m_Father: {fileID: 4633218391620774}
   m_RootOrder: 1
@@ -80,7 +79,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904578260992140}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.00000008940697, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
@@ -93,9 +92,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041713464513884}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.756836, y: 0.573, z: -0.1668129}
-  m_LocalScale: {x: 0.532, y: 0.76, z: 0.304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.7968116, y: 0.54, z: 11.997663}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4618346566984122}
   - {fileID: 4002666695324222}
@@ -115,7 +114,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c6eb56d799984534c855ba21abffa8cd, type: 2}
+  - {fileID: 2100000, guid: 860429392b34601428a640add8ed18af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,15 +177,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514443721916288}
   m_Mesh: {fileID: 4300000, guid: 5de384d56ba20914c880a2c44052f9e5, type: 3}
---- !u!65 &65024682089923960
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1904578260992140}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.020000005, y: 0.041474465, z: 0.0106011}
-  m_Center: {x: 0.0000000144355, y: 0.01073723, z: 0.0046994486}
