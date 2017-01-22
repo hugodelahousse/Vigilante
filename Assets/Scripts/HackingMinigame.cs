@@ -99,7 +99,7 @@ public class HackingMinigame : MonoBehaviour
         //Debug.Log("Drawing note at " + x + " " + y);
         foreach (Vector2 point in noteVectors)
         {
-            texture.SetPixel(x + (int)point.x, y - (int)point.y, color);
+            texture.SetPixel(x + (int)point.x, y - (int)point.y + 16, color);
         }
     }
 
