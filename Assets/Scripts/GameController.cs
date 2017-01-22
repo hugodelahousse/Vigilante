@@ -79,17 +79,20 @@ public class GameController : MonoBehaviour {
 		originalTimeScale = Time.timeScale;
 		_isGameOver = false;
 
-		foreach (MenuActions action in FindObjectsOfType<MenuActions>())
+		if (Application.loadedLevel != 0)
 		{
-			if (action.CompareTag("GameOverMenu"))
+			foreach (MenuActions action in FindObjectsOfType<MenuActions>())
 			{
-				gameOverMenuObject = action.gameObject;
-				gameOverMenuObject.SetActive(false);
-			}
-			else
-			{
-				pauseMenuObject = action.gameObject;
-				pauseMenuObject.SetActive(false);
+				if (action.CompareTag("GameOverMenu"))
+				{
+					gameOverMenuObject = action.gameObject;
+					gameOverMenuObject.SetActive(false);
+				}
+				else
+				{
+					pauseMenuObject = action.gameObject;
+					pauseMenuObject.SetActive(false);
+				}
 			}
 		}
 

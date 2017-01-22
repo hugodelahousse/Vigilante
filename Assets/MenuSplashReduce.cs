@@ -15,13 +15,19 @@ public class MenuSplashReduce : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (scale < 0.0f)
+		{
+			scale = 0.0f;
+		}
+
 		if (scale > 0.0f)
 		{
 			scale -= Time.deltaTime * 0.5f;
-			if (scale < 1.0f)
-			{
-				transform.localScale = origScale * scale;
-			}
+		}
+
+		if (scale < 1.0f)
+		{
+			transform.localScale = origScale * scale;
 		}
 	}
 }
