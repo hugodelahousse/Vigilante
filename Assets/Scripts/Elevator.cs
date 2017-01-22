@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour {
 
-	private bool playerInBox = false;
+	//private bool playerInBox = false;
 
+	/*
 	void LateUpdate()
 	{
 		//Debug.Log("GH");
@@ -44,5 +45,5 @@ public class Elevator : MonoBehaviour {
 		{
 			playerInBox = false;
 		}
-	}
+	}*/
 }
