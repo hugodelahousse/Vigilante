@@ -1,0 +1,281 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c8d)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   21.20.16.4574
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.029 seconds
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\System.dll (this message is harmless)
+OnLevelWasLoaded was found on GameController
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename:  Line: 382)
+
+desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 3.984046 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 11fc -> priority: 1 
+  Thread -> id: 11c0 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.133493 ms
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1984.
+Total: 1.121367 ms (FindLiveObjects: 0.254541 ms CreateObjectMapping: 0.114507 ms MarkObjects: 0.649116 ms  DeleteObjects: 0.101743 ms)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Added key: YELLOW_CARD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.562713 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1989.
+Total: 0.826712 ms (FindLiveObjects: 0.158997 ms CreateObjectMapping: 0.089709 ms MarkObjects: 0.551749 ms  DeleteObjects: 0.025527 ms)
+
+Solved
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Stop hacking
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Added key: YELLOW_CARD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Solved
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Stop hacking
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.517630 ms
+
+Unloading 55 unused Assets to reduce memory usage. Loaded Objects now: 1380.
+Total: 3.857504 ms (FindLiveObjects: 0.114142 ms CreateObjectMapping: 0.049960 ms MarkObjects: 0.507988 ms  DeleteObjects: 3.185049 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.841892 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1377.
+Total: 0.686678 ms (FindLiveObjects: 0.093720 ms CreateObjectMapping: 0.052877 ms MarkObjects: 0.501424 ms  DeleteObjects: 0.037561 ms)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Camera saw player!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.046974 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1377.
+Total: 0.823795 ms (FindLiveObjects: 0.128729 ms CreateObjectMapping: 0.059441 ms MarkObjects: 0.592957 ms  DeleteObjects: 0.041572 ms)
+
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c8d)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   21.20.16.4574
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.029 seconds
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Hugo\Documents\Projects\Vigilante\Hijack.wav_Data\Managed\System.dll (this message is harmless)
+OnLevelWasLoaded was found on GameController
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename:  Line: 382)
+
+desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.041436 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1377.
+Total: 1.041504 ms (FindLiveObjects: 0.127270 ms CreateObjectMapping: 0.072934 ms MarkObjects: 0.812125 ms  DeleteObjects: 0.028444 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.939327 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1377.
+Total: 1.049527 ms (FindLiveObjects: 0.188535 ms CreateObjectMapping: 0.082051 ms MarkObjects: 0.744661 ms  DeleteObjects: 0.033185 ms)
+
+Solved
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Solved
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at GameController.EnterMenu () [0x00000] in <filename unknown>:0 
+  at PlayerCameraControl.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at GameController.ExitMenu () [0x00000] in <filename unknown>:0 
+  at PlayerCameraControl.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
